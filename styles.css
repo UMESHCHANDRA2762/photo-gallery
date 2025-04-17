@@ -49,7 +49,7 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
     max-height: 120vh;
   }
-
+  
   .gallery-heading {
     font-family: 'Orbitron', sans-serif;
     font-size: 3rem;
@@ -132,14 +132,19 @@ body {
   }
   @media (max-width: 768px) {
     .gallery img:hover {
-      transform: scale(1.05); /* Mild zoom effect */
-      z-index: 2;
-      border-color: #fff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-      max-height: 35vh;
+      transform: none !important;
+      z-index: 1;
+      border-color: transparent;
+      box-shadow: none;
+      max-height: 25vh;
     }
-  }
   
+    .gallery img {
+      pointer-events: auto;
+      position: relative;
+      z-index: 1;
+    }
+  } 
   @media (max-width: 480px) {
     .gallery img:hover {
       transform: scale(1.02); /* Even more subtle on very small screens */
