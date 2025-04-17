@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('imgs/12.jpeg') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  .gallery-container {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 180px auto;
+    border-radius: 12px;
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+  
+    /* Add this to center content in both directions */
+    place-items: center;
+  }
+  
+  .gallery img {
+    width: 100%; /* Ensure the image takes up full width */
+    height: 100%; /* Ensures the image fills the grid box */
+    object-fit: cover; /* Ensures the image covers the grid box area */
+    border-radius: 10px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 0.4s ease, z-index 0.3s;
+    transform: scale(0.85);
+    z-index: 1;
+    max-height: 100%; /* Ensure the image fits the container height */
+    transform-origin: center center;
+    height : 20vh;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .gallery img:hover {
+    transform: scale(2);
+    z-index: 10;
+    border-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    max-height: 120vh;
+  }
+
+  .gallery-heading {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 40px;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  }
+  
+  
+  /* Modal styling */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    width: 80vw;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 12px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  /* Responsive adjustments */
+@media (max-width: 768px) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets and small screens */
+    }
+  
+    .gallery img {
+      height: 25vh; /* Slightly taller for better visibility */
+    }
+  
+    .gallery-heading {
+      font-size: 2.2rem; /* Smaller heading for mobile */
+      padding: 0 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .gallery {
+      grid-template-columns: 1fr; /* Single column for very small screens */
+    }
+  
+    .gallery img {
+      height: 30vh;
+    }
+  
+    .gallery-container {
+      padding: 20px 10px;
+    }
+  
+    .modal-content {
+      width: 95vw;
+      max-height: 70vh;
+    }
+  
+    .close {
+      top: 10px;
+      right: 20px;
+      font-size: 30px;
+    }
+  }
+  
