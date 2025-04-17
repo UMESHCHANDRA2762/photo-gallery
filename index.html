@@ -4,38 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Styled Image Gallery</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
 
+  <!-- Orbitron font for heading -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  
+  <!-- Link to CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  
-    <h1 class="gallery-heading">Superman and Batman Gallery</h1>
+  <h1 class="gallery-heading">Superman and Batman Gallery</h1>
+
   <div class="gallery-container">
     <div class="gallery">
-      <img src="imgs/A.jpg" alt="Image 1" tabindex="0" onclick="openModal(this.src)" />
-      <img src="imgs/J.jpg"  alt="Image 2" tabindex="0"  onclick="openModal(this.src)" />
-      <img src="imgs/C.jpg"  alt="Image 3" tabindex="0" onclick="openModal(this.src)" />
-      <img src="imgs/B.jpg"  alt="Image 4" tabindex="0" onclick="openModal(this.src)" />
-      <img src="imgs/11.jpeg"  alt="Image 5" tabindex="0" onclick="openModal(this.src)" />
-      <img src="imgs/F.png"  alt="Image 6" tabindex="0"  onclick="openModal(this.src)" />
+      <img src="imgs/A.jpg" alt="Image 1" tabindex="0" />
+      <img src="imgs/J.jpg" alt="Image 2" tabindex="0" />
+      <img src="imgs/C.jpg" alt="Image 3" tabindex="0" />
+      <img src="imgs/B.jpg" alt="Image 4" tabindex="0" />
+      <img src="imgs/11.jpeg" alt="Image 5" tabindex="0" />
+      <img src="imgs/F.png" alt="Image 6" tabindex="0" />
     </div>
   </div>
 
-  <div id="modal" class="modal" onclick="closeModal()">
+  <!-- Modal for full-screen image view -->
+  <div id="modal" class="modal">
     <span class="close">&times;</span>
     <img class="modal-content" id="modal-img" />
   </div>
 
-  <script>
-    function openModal(src) {
-      document.getElementById('modal').style.display = 'flex';
-      document.getElementById('modal-img').src = src;
-    }
-
-    function closeModal() {
-      document.getElementById('modal').style.display = 'none';
-    }
-  </script>
+  <!-- Link to JS -->
+  <script src="script.js"></script>
 </body>
 </html>
