@@ -1,3 +1,4 @@
+/* Body and gallery setup */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -20,24 +21,22 @@ body {
     position: relative;
     z-index: 1;
     overflow: visible;
-  
-    /* Add this to center content in both directions */
     place-items: center;
   }
   
   .gallery img {
-    width: 100%; /* Ensure the image takes up full width */
-    height: 100%; /* Ensures the image fills the grid box */
-    object-fit: cover; /* Ensures the image covers the grid box area */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 10px;
     border: 2px solid transparent;
     cursor: pointer;
     transition: transform 0.4s ease, z-index 0.3s;
     transform: scale(0.85);
     z-index: 1;
-    max-height: 100%; /* Ensure the image fits the container height */
+    max-height: 100%;
     transform-origin: center center;
-    height : 20vh;
+    height: 20vh;
     display: block;
     margin: 0 auto;
   }
@@ -49,16 +48,6 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
     max-height: 120vh;
   }
-  
-  .gallery-heading {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 3rem;
-    text-align: center;
-    margin-top: 40px;
-    color: #fff;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-  }
-  
   
   /* Modal styling */
   .modal {
@@ -90,25 +79,31 @@ body {
     font-weight: bold;
     cursor: pointer;
   }
+  
+  /* Disable hover effect when modal is open */
+  body.modal-open .gallery img {
+    pointer-events: none; /* Disable pointer events for images */
+  }
+  
   /* Responsive adjustments */
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
     .gallery {
-      grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets and small screens */
+      grid-template-columns: repeat(2, 1fr);
     }
   
     .gallery img {
-      height: 25vh; /* Slightly taller for better visibility */
+      height: 25vh;
     }
   
     .gallery-heading {
-      font-size: 2.2rem; /* Smaller heading for mobile */
+      font-size: 2.2rem;
       padding: 0 10px;
     }
   }
   
   @media (max-width: 480px) {
     .gallery {
-      grid-template-columns: 1fr; /* Single column for very small screens */
+      grid-template-columns: 1fr;
     }
   
     .gallery img {
@@ -130,28 +125,10 @@ body {
       font-size: 30px;
     }
   }
-  @media (max-width: 768px) {
-    .gallery img:hover {
-      transform: none !important;
-      z-index: 1;
-      border-color: transparent;
-      box-shadow: none;
-      max-height: 25vh;
-    }
   
-    .gallery img {
-      pointer-events: auto;
-      position: relative;
-      z-index: 1;
-    }
-  } 
-  @media (max-width: 480px) {
-    .gallery img:hover {
-      transform: scale(1.02); /* Even more subtle on very small screens */
-      z-index: 2;
-      border-color: #fff;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-      max-height: 35vh;
-    }
+  /* Hover effect applied on scroll */
+  .gallery img.hover-simulated {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
   }
   
